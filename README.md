@@ -35,8 +35,9 @@
   - Migrate db again by running `yarn sequelize db:migrate` and the columns will be added in Bookings table
 
   ##### OR
+  - Update booking table
 
-  - Sync DB and the columns(noOfSeats & totalCost) will be added in Bookings table
+   - Sync DB and the columns(noOfSeats & totalCost) will be added in Bookings table
 
     ```
         const db = require('./models/index');
