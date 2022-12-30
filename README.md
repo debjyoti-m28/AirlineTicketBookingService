@@ -12,9 +12,11 @@
 - Migrate DB
   - run ` yarn sequelize db:migrate`
 - Update booking table
+
   - run ` yarn sequelize migration:create --name modify_booking`
   - add column in the table using `model name` and `new column name`
   - This is how the two columns(noOfSeats & totalCost) are added in Bookings table:
+
   ```
     await queryInterface.addColumn('Bookings', 'noOfSeats',
     {
@@ -29,4 +31,17 @@
       defaultValue: 0
     });
   ```
+
   - Migrate db again by running `yarn sequelize db:migrate` and the columns will be added in Bookings table
+
+  ### OR
+
+  - Sync DB and the columns(noOfSeats & totalCost) will be added in Bookings table
+
+    ```
+        const db = require('./models/index');
+
+        if(process.env.DB_SYNC) {
+            db.sequelize.sync({alter: true});
+        }
+    ```
