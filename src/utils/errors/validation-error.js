@@ -1,4 +1,5 @@
-const { StatusCodes } = require('http-status-codes')
+const { StatusCodes } = require('http-status-codes');
+
 class ValidationError extends Error {
     constructor(error) {
         super();
