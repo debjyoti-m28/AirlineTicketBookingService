@@ -19,7 +19,7 @@ class BookingService {
             // calculate total cost and add to payload
             let priceOfTheFlight = flightData.price;
             if(data.noOfSeats > flightData.totalSeats) {
-                throw new ServiceError('Something went wrong in the booking process', 'Insufficient seats int the flight')
+                throw new ServiceError('Something went wrong in the booking process', 'Insufficient seats in the flight')
             }
             const totalCost = priceOfTheFlight * data.noOfSeats;
             const bookingPayload = {...data, totalCost}
