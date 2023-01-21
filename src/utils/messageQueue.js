@@ -37,3 +37,9 @@ const publishMessage = async (channel, binding_key, message) => {
         throw error;
     }
 }
+
+module.exports = {
+    createChannel,
+    subscribeMessage,
+    publishMessage
+}
