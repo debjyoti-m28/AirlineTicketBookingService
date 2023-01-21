@@ -35,6 +35,8 @@ class BookingService {
             const finalBooking = await this.bookingRepository.update(booking.id, {status: 'Booked'});
             return finalBooking;
 
+            //send ticket creation notification to Remider service
+
         } catch (error) {
             if(error.name === 'RepositoryError' || error.name === 'ValidationError') {
                 throw error;
